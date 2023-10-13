@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  /* font-family: 'Croissant One', cursive; */
+  font-family: "DM Serif Display", serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  color: #ff0d0d;
+  text-align: center;
+}
+
+i {
+  font-size: 18px;
+}
+/* antd button styling */
+button {
+  border-radius: 0;
+  box-shadow: none !important;
+  height: 40px !important;
+}
+
+input,
+textarea,
+select {
+  min-height: 40px !important;
+  border: 1px solid #6a6a6a;
+  border-radius: 2px;
+  width: 100% !important;
+}
+
+.ant-form-item {
+  margin-bottom: 0 !important;
+}
+
+.ant-form-item-label {
+  padding: 0 !important;
+}
+
+.ant-btn-primary {
+  color: black;
+  background-color: transparent;
+  display: inline-block;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+}
+.ant-btn-primary:hover {
+  border-color: #77828f;
+}
+
+.pie-chart {
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+}
+
+
+

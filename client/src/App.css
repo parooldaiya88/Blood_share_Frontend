@@ -1,0 +1,11 @@
+/* styles.css or your stylesheet */
+.custom-stroke {
+  stroke: #ff5733; /* Your desired stroke color */
+  stroke-width: 2; /* Stroke width */
+  fill: none; /* Prevents filling the shape */
+  transition: stroke 0.3s ease; /* Add a transition for hover effect */
+}
+
+.custom-stroke:hover {
+  stroke: #007acc; /* New stroke color on hover */
+}
