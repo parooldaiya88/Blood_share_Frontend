@@ -1,5 +1,4 @@
 import React, { /* useState */ useEffect, useContext } from "react";
-
 import OrgHospitalForm from "./OrgHospitalForm.jsx";
 import { Link } from "react-router-dom";
 import { RegisterUser } from "../../apiCalls/userApiCalls.js";
@@ -7,15 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { DataContext } from "../../reducer/context.js";
 import Footer from "./Footer.jsx";
 import { message } from "antd";
-
 /* import Navigation from "./Navbar.jsx"; */
-
 const RegistrationForm = () => {
   const { dispatchLoader, type, setType, formData, setFormData, isOpen } =
     useContext(DataContext);
-
   const navigate = useNavigate();
-
   const handleDonorChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -24,13 +19,11 @@ const RegistrationForm = () => {
       [name]: value,
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       dispatchLoader({ type: "Set_Loading", payload: true });
       formData.userType = type;
-
       // Remove irrelevant fields based on user type
       if (formData.userType === "donor") {
         delete formData.address;
@@ -49,7 +42,6 @@ const RegistrationForm = () => {
       const response = await RegisterUser(formData);
       dispatchLoader({ type: "Set_Loading", payload: false });
       //  console.log("Form Data:", formData);
-
       if (response.success) {
         // Handle successful registration here, e.g., show a success message or redirect
         navigate("/login");
@@ -65,26 +57,23 @@ const RegistrationForm = () => {
           organizationName: "",
           address: "",
         });
-        dispatchLoader({ type: "Set_Loading", payload: false }); 
-        if(formData.password < 8){
-          message.error("Password must be at least 8 characters")
-          console.error("Password must be at least 8 characters")
-        }
+        dispatchLoader({ type: "Set_Loading", payload: false }); //
         message.success("Registration successful");
-       
-      
+        //console.log("Registration successful:", response.message);
       }
-     else {
+      if (formData.password.length < 8) {
+        message.error("Password must be at least 8 characters");
+      } else if (formData.age.length < 18) {
+        message.error("Age must be at least 18 years");
+      } else {
         throw new Error(response.message);
-        //console.error("Registration failed:", response.message);
       }
+      //console.error("Registration failed:", response.message);
     } catch (error) {
       // Handle unexpected errors, e.g., network issues or server problems
-
       console.error("An error occurred during registration:", error.message);
     }
   };
-
   useEffect(() => {
     if (localStorage.getItem("token")) {
       navigate("/");
@@ -119,7 +108,6 @@ const RegistrationForm = () => {
             />
             <span className="ml-2">Donor</span>
           </label>
-
           <label className="inline-flex items-center mr-2">
             <input
               type="radio"
@@ -131,7 +119,6 @@ const RegistrationForm = () => {
             />
             <span className="ml-2">Hospital</span>
           </label>
-
           <label className="inline-flex items-center">
             <input
               type="radio"
@@ -246,7 +233,6 @@ const RegistrationForm = () => {
         >
           Register
         </button>
-
         <div className="text-center">
           <p className="text-gray-600">
             Already have an account?{" "}

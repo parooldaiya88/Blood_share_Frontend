@@ -33,7 +33,7 @@ const ContactPage = () => {
           celebrating their contributions to innovation in the tech industry!
         </p>
 
-        <div className='container mx-auto py-10 flex justify-center mt-16 md:w-full'>
+        <div className='container mx-auto py-10 flex justify-center pb-24 mt-16 md:w-full'>
           <div className='grid lg:grid-cols-4 gap-4 '>
             <div className='shadow-lg rounded-lg w-80 h-96 relative overflow-hidden group'>
               <img src={Maha} alt='Portrait of Maha' className='rounded-lg' />

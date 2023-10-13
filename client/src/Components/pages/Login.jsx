@@ -37,7 +37,7 @@ const LoginForm = () => {
           email: "",
           password: "",
         });
-        console.log("Login successful:", response.message);
+        // console.log("Login successful:", response.message);
 
         message.success(response.message);
         localStorage.setItem("token", response.token);
@@ -47,12 +47,11 @@ const LoginForm = () => {
         throw new Error('please provide correct email or password');
       }
     } catch (error) {
-      console.log(error.message); // Check if error message is being logged
+      // console.log(error.message); // Check if error message is being logged
       dispatchLoader({ type: "Set_Loading", payload: false });
       message.error(error.message);
     }
-    console.log("email", loginData.email);
-    console.log("password", loginData.password);
+ 
   };
 
   useEffect(() => {
