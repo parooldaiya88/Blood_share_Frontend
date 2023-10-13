@@ -4,7 +4,7 @@ import { axiosInstance } from "./axiosInstance";
 export const LoginUser = async (payload) => {
   const response = await axiosInstance(
     "post",
-    "http://localhost:8000/users/login",
+    "https://blood-share-backend2.onrender.com/users/login",
     payload
   );
   return response;
@@ -15,7 +15,7 @@ export const LoginUser = async (payload) => {
 export const ForgetPassword = async (payload) => {
   const response = await axiosInstance(
     "post",
-    "http://localhost:8000/users/forgot-password",
+    "https://blood-share-backend2.onrender.com/users/forgot-password",
     payload
   );
   return response;
@@ -26,7 +26,7 @@ export const ForgetPassword = async (payload) => {
 export const ResetPassword = async (id, token, payload) => {
   const response = await axiosInstance(
     "post",
-    `http://localhost:8000/users/reset-password/${id}/${token}`,
+    `https://blood-share-backend2.onrender.com/users/reset-password/${id}/${token}`,
     payload
   );
   return response;
@@ -35,7 +35,7 @@ export const ResetPassword = async (id, token, payload) => {
 export const RegisterUser = async (payload) => {
   const response = await axiosInstance(
     "post",
-    "http://localhost:8000/users/register",
+    "https://blood-share-backend2.onrender.com/users/register",
     payload
   );
   return response;
@@ -45,7 +45,7 @@ export const RegisterUser = async (payload) => {
 export const GetCurrentUser = async () => {
   const response = await axiosInstance(
     "get",
-    "http://localhost:8000/users/get-current-user"
+    "https://blood-share-backend2.onrender.com/users/get-current-user"
   );
   return response;
 };
@@ -55,7 +55,7 @@ export const GetCurrentUser = async () => {
 export const GetAllDonors = async () => {
   const response = await axiosInstance(
     "get",
-    "http://localhost:8000/users/get-all-donors"
+    "https://blood-share-backend2.onrender.com/users/get-all-donors"
   );
   return response;
 };
@@ -64,7 +64,7 @@ export const GetAllDonors = async () => {
 export const GetAllHospitals = async () => {
   const response = await axiosInstance(
     "get",
-    "http://localhost:8000/users/get-all-hospitals"
+    "https://blood-share-backend2.onrender.com/users/get-all-hospitals"
   );
   return response;
 };
@@ -73,7 +73,7 @@ export const GetAllHospitals = async () => {
 export const GetDisplayedOrganizationsForDonor = async () => {
   const response = await axiosInstance(
     "get",
-    "http://localhost:8000/users/get-displayed-organizations-for-donor"
+    "https://blood-share-backend2.onrender.com/users/get-displayed-organizations-for-donor"
   );
   return response;
 };
@@ -82,7 +82,7 @@ export const GetDisplayedOrganizationsForDonor = async () => {
 export const GetDisplayedOrganizationsForHospital = async () => {
   const response = await axiosInstance(
     "get",
-    "http://localhost:8000/users/get-displayed-organizations-for-hospital"
+    "https://blood-share-backend2.onrender.com/users/get-displayed-organizations-for-hospital"
   );
   return response;
 };

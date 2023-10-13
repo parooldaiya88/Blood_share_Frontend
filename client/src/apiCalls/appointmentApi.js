@@ -4,7 +4,7 @@ import { axiosInstance } from "./axiosInstance";
 export const AddAppointment = async (payload) => {
   const response = await axiosInstance(
     "post",
-    "http://localhost:8000/appointment/add-appointment",
+    "https://blood-share-backend2.onrender.com/appointment/add-appointment",
     payload
   );
   return response;

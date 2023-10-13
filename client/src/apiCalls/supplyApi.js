@@ -4,7 +4,7 @@ import { axiosInstance } from "./axiosInstance";
 export const AddSupply = async (payload) => {
   const response = await axiosInstance(
     "post",
-    "http://localhost:8000/supply/add",
+    "https://blood-share-backend2.onrender.com/supply/add",
     payload
   );
   return response;
@@ -14,7 +14,7 @@ export const AddSupply = async (payload) => {
 export const GetSupply = async (page, limit = 8) => {
   const response = await axiosInstance(
     "get",
-    `http://localhost:8000/supply/get?page=${page}&limit=${limit}`
+    `https://blood-share-backend2.onrender.com/supply/get?page=${page}&limit=${limit}`
   );
   return response;
 };
@@ -23,7 +23,7 @@ export const GetSupply = async (page, limit = 8) => {
 export const UtilizationOfBloodSupply = async () => {
   const response = await axiosInstance(
     "get",
-    "http://localhost:8000/supply/utilization"
+    "https://blood-share-backend2.onrender.com/supply/utilization"
   );
   return response;
 };
@@ -32,7 +32,7 @@ export const UtilizationOfBloodSupply = async () => {
 export const DonationOfBloodSupply = async () => {
   const response = await axiosInstance(
     "get",
-    "http://localhost:8000/supply/donation"
+    "https://blood-share-backend2.onrender.com/supply/donation"
   );
   return response;
 };
@@ -41,7 +41,7 @@ export const DonationOfBloodSupply = async () => {
 export const GetAllBloodGroups = async () => {
   const response = await axiosInstance(
     "get",
-    "http://localhost:8000/dashboard/get-bloodGroups"
+    "https://blood-share-backend2.onrender.com/dashboard/get-bloodGroups"
   );
   return response;
 };
