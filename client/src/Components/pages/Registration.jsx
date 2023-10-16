@@ -61,11 +61,12 @@ const RegistrationForm = () => {
         message.success("Registration successful");
         //console.log("Registration successful:", response.message);
       }
-      if (formData.password.length < 8) {
-        message.error("Password must be at least 8 characters");
-      } else if (formData.age.length < 18) {
-        message.error("Age must be at least 18 years");
-      } else {
+       else {
+        if (formData.password.length < 8) {
+          message.error("Password must be at least 8 characters");
+        } else if (formData.age.length < 18) {
+          message.error("Age must be at least 18 years");
+        }
         throw new Error(response.message);
       }
       //console.error("Registration failed:", response.message);
@@ -76,7 +77,7 @@ const RegistrationForm = () => {
   };
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      navigate("/");
+      // navigate("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
